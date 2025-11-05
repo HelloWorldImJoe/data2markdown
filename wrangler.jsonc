@@ -1,0 +1,17 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "v2ex-info-newsletter",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-17",
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [],
+  "triggers": {
+    "crons": ["59 23 * * *"]
+  }
+}

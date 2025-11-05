@@ -134,3 +134,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Cloudflare Workers (avoid committing local dev secrets/state)
+.dev.vars
+.wrangler/
