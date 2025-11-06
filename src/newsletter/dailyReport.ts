@@ -30,8 +30,9 @@ async function displayDailyReport(params: {
 }): Promise<MarkdownArticle> {
   const { addressDetails, hodlData } = params;
 
-  const today = new Date();
-  const title = `$V2EX日报(${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()})`;
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const title = `$V2EX日报(${yesterday.getFullYear()}-${yesterday.getMonth() + 1}-${yesterday.getDate()})`;
 
   const latestHodl = hodlData[0];
 
@@ -129,7 +130,7 @@ async function displayDailyReport(params: {
   }
 
   parts.push("----");
-  parts.push("本日报告由 [V2EX Info](https://v2ex.info) 提供数据, 由 [Newsletter Report Bot](https://v2ex.info/tools/daily-report-bot) 自动生成。");
+  parts.push("此报告由 [V2EX Info](https://v2ex.info) 提供数据, 由 [Newsletter Report Bot](https://v2ex.info/tools/daily-report-bot) 自动生成。");
   parts.push("");
   parts.push("此报告仅供参考，不构成任何投资建议。投资有风险，入市需谨慎。");
   parts.push("");
